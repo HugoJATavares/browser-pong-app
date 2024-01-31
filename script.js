@@ -34,7 +34,7 @@ if (isMobile.matches) {
 } else {
   speedY = -1;
   speedX = speedY;
-  computerSpeed = 8;
+  computerSpeed = 25;
 }
 
 let playerScore = 0;
@@ -46,7 +46,6 @@ let isNewGame = true;
 function renderCanvas() {
   context.fillStyle = 'black';
   context.fillRect(0, 0, width, height);
-
   context.fillStyle = originalPaddleColor;
   context.fillRect(paddleBottomX, height - 20, paddleWidth, paddleHeight);
   context.fillRect(paddleTopX, 10, paddleWidth, paddleHeight);
@@ -105,7 +104,7 @@ function ballBoundaries() {
     if (ballX > paddleBottomX && ballX < paddleBottomX + paddleWidth) {
       paddleContact = true;
 
-      originalPaddleColor = 'red';
+      originalPaddleColor = 'red'; 
       setTimeout(() => {
         originalPaddleColor = 'white';
       }, 200);
@@ -131,9 +130,9 @@ function ballBoundaries() {
     if (ballX > paddleTopX && ballX < paddleTopX + paddleWidth) {
       paddleContact = true;
 
-      originalPaddleColor = 'blue';
+      originalPaddleColor = 'blue'; 
       setTimeout(() => {
-        originalPaddleColor = 'white';
+        originalPaddleColor = 'white'; 
       }, 200);
 
       if (playerMoved) {
@@ -218,19 +217,13 @@ function startGame() {
     playerMoved = true;
 
     paddleBottomX = e.clientX - canvas.getBoundingClientRect().left - paddleWidth / 2;
-
-    if (paddleBottomX < paddleDiff) {
-      paddleBottomX = 0;
-    }
-    if (paddleBottomX > width - paddleWidth) {
-      paddleBottomX = width - paddleWidth;
-    }
+updatePaddlePosition();
 
     canvas.style.cursor = 'none';
   });
 
   canvas.addEventListener('touchmove', (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     playerMoved = true;
     paddleBottomX = e.touches[0].clientX - canvas.getBoundingClientRect().left - paddleWidth / 2;
     updatePaddlePosition();
