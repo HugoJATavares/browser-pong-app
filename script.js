@@ -1,5 +1,6 @@
 const { body } = document;
-
+const canvas = document.createElement('canvas');
+const context = canvas.getContext('2d');
 
 const width = 500;
 const height = 700;
@@ -43,30 +44,30 @@ const winningScore = 7;
 
 function renderCanvas() {
   
-  // context.fillStyle = 'black';
-  // context.fillRect(0, 0, width, height);
+  context.fillStyle = 'black';
+  context.fillRect(0, 0, width, height);
 
-  // context.fillStyle = 'white';
+  context.fillStyle = 'white';
 
-  // context.fillRect(paddleBottomX, height - 20, paddleWidth, paddleHeight);
+  context.fillRect(paddleBottomX, height - 20, paddleWidth, paddleHeight);
 
-  // context.fillRect(paddleTopX, 10, paddleWidth, paddleHeight);
+  context.fillRect(paddleTopX, 10, paddleWidth, paddleHeight);
 
-  // context.beginPath();
-  // context.setLineDash([4]);
-  // context.moveTo(0, 350);
-  // context.lineTo(500, 350);
-  // context.strokeStyle = 'grey';
-  // context.stroke();
+  context.beginPath();
+  context.setLineDash([4]);
+  context.moveTo(0, 350);
+  context.lineTo(500, 350);
+  context.strokeStyle = 'grey';
+  context.stroke();
 
-  // context.beginPath();
-  // context.arc(ballX, ballY, ballRadius, 2 * Math.PI, false);
-  // context.fillStyle = 'white';
-  // context.fill();
+  context.beginPath();
+  context.arc(ballX, ballY, ballRadius, 2 * Math.PI, false);
+  context.fillStyle = 'white';
+  context.fill();
 
-  // context.font = '32px Courier New';
-  // context.fillText(playerScore, 20, canvas.height / 2 + 50);
-  // context.fillText(computerScore, 20, canvas.height / 2 - 30);
+  context.font = '32px Courier New';
+  context.fillText(playerScore, 20, canvas.height / 2 + 50);
+  context.fillText(computerScore, 20, canvas.height / 2 - 30);
 }
 
 function createCanvas() {
