@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: rgb(39, 39, 39);
+  background-color: rgba(167, 87, 87, 0.664);
   display: flex;
   justify-content: center;
   font-family: "Courier New", Courier, monospace;

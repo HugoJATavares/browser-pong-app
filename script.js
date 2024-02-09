@@ -16,7 +16,7 @@ let paddleBottomX = 225;
 let paddleTopX = 225;
 let playerMoved = false;
 let paddleContact = false;
-let originalPaddleColor = 'white'
+let originalPaddleColor = 'black'
 
 let ballX = 250;
 let ballY = 350;
@@ -44,7 +44,7 @@ let isGameOver = true;
 let isNewGame = true;
 
 function renderCanvas() {
-  context.fillStyle = 'black';
+  context.fillStyle = 'white';
   context.fillRect(0, 0, width, height);
   context.fillStyle = originalPaddleColor;
   context.fillRect(paddleBottomX, height - 20, paddleWidth, paddleHeight);
@@ -59,7 +59,7 @@ function renderCanvas() {
 
   context.beginPath();
   context.arc(ballX, ballY, ballRadius, 2 * Math.PI, false);
-  context.fillStyle = 'white';
+  context.fillStyle = 'black';
   context.fill();
 
   context.font = '32px Courier New';
@@ -106,7 +106,7 @@ function ballBoundaries() {
 
       originalPaddleColor = 'red'; 
       setTimeout(() => {
-        originalPaddleColor = 'white';
+        originalPaddleColor = 'black';
       }, 200);
 
       if (playerMoved) {
@@ -132,7 +132,7 @@ function ballBoundaries() {
 
       originalPaddleColor = 'blue'; 
       setTimeout(() => {
-        originalPaddleColor = 'white'; 
+        originalPaddleColor = 'black'; 
       }, 200);
 
       if (playerMoved) {
